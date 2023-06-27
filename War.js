@@ -8,12 +8,16 @@
 // Include a README written in well-formatted Markdown (hint: look up README templates)
 // Show a good commit history with frequent commits (We're looking for lots of small commits!)
 
+// card class
+
 class Card {
   constructor(suit, rank) {
     this.suit = suit;
     this.rank = rank;
   }
 }
+
+// deck class
 
 class Deck {
   constructor() {
@@ -40,6 +44,8 @@ class Deck {
   }
 }
 
+// player class
+
 class Player {
   constructor(name) {
     this.name = name;
@@ -55,6 +61,8 @@ class Player {
     return this.hand.length === 52;
   }
 }
+
+// war function
 
 function war(player1, player2) {
   const warCards = 4;
@@ -100,8 +108,9 @@ while (deck.cards.length > 0) {
 
 function amountOfCards(player1, player2) {
   console.log(`${player1.name} has ${player1.hand.length} cards`);
-  console.log(`${player2.name} has ${player2.hand.length} caerds`);
+  console.log(`${player2.name} has ${player2.hand.length} cards`);
 }
+// functionality of game
 
 let round = 1;
 while (player1.hand.length > 0 && player2.hand.length > 0) {
@@ -133,9 +142,10 @@ while (player1.hand.length > 0 && player2.hand.length > 0) {
   }
 }
 
+// end results
+
 if (player1.hasAllCards()) {
   console.log(`${player1.name} wins the game!`);
 } else if (player2.hasAllCards()) {
   console.log(`${player2.name} wins the game!`);
 }
-
