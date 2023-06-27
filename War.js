@@ -8,9 +8,6 @@
 // Include a README written in well-formatted Markdown (hint: look up README templates)
 // Show a good commit history with frequent commits (We're looking for lots of small commits!)
 
-
-
-
 class Card {
   constructor(suit, rank) {
     this.suit = suit;
@@ -101,6 +98,11 @@ while (deck.cards.length > 0) {
   player2.drawCard(deck);
 }
 
+function amountOfCards(player1, player2) {
+  console.log(`${player1.name} has ${player1.hand.length} cards`);
+  console.log(`${player2.name} has ${player2.hand.length} caerds`);
+}
+
 let round = 1;
 while (player1.hand.length > 0 && player2.hand.length > 0) {
   const card1 = player1.hand.shift();
@@ -124,6 +126,8 @@ while (player1.hand.length > 0 && player2.hand.length > 0) {
 
   round++;
 
+  amountOfCards(player1, player2);
+
   if (player1.hasAllCards() || player2.hasAllCards()) {
     break;
   }
@@ -134,6 +138,4 @@ if (player1.hasAllCards()) {
 } else if (player2.hasAllCards()) {
   console.log(`${player2.name} wins the game!`);
 }
-
-
 
